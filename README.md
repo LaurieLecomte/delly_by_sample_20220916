@@ -4,9 +4,10 @@
 
 As recommended in [Delly's user manual](https://github.com/dellytools/delly#germline-sv-calling), SV calling should be done separately for each sample for high coverage data. This pipeline thus parallelizes the SV calling step across **samples**.
 
-1. Call SVs in all samples, then convert .bcf output file to .vcf
+1. Call SVs in all samples
 2. Merge SV sites across samples
-3. Filter
+3. Genotype SVs at merged sites in each sample
+4. Merge samples together into a single file
 
 
 # Prerequisites
