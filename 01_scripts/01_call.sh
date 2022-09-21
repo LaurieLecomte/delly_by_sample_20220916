@@ -26,9 +26,13 @@ REGIONS_EX="02_infos/excl_chrs.txt"
 # LOAD REQUIRED MODULES
 module load bcftools/1.15
 
+if [[ ! -d $CALLS_DIR/raw ]]
+then
+  mkdir $CALLS_DIR/raw
+fi
 
 # 1. Run delly on each file
-delly call -g $GENOME $BAM_DIR/"$SAMPLE".bam -o $CALLS_DIR/"$SAMPLE".bcf 
+delly call -g $GENOME $BAM_DIR/"$SAMPLE".bam -o $CALLS_DIR/raw/"$SAMPLE".bcf 
 ## If some chromosomes need to be excluded from SV calling :
 # delly call -g $GENOME $BAM_DIR/"$SAMPLE".bam -o $CALLS_DIR/"$SAMPLE".bcf -x $REGIONS_EX
 
