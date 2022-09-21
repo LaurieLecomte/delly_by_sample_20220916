@@ -26,6 +26,7 @@ REGIONS_EX="02_infos/excl_chrs.txt"
 # LOAD REQUIRED MODULES
 module load bcftools/1.15
 
+# Create directory for raw calls
 if [[ ! -d $CALLS_DIR/raw ]]
 then
   mkdir $CALLS_DIR/raw
