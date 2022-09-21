@@ -33,6 +33,6 @@ delly call -g $GENOME $BAM_DIR/"$SAMPLE".bam -o $CALLS_DIR/"$SAMPLE".bcf
 # delly call -g $GENOME $BAM_DIR/"$SAMPLE".bam -o $CALLS_DIR/"$SAMPLE".bcf -x $REGIONS_EX
 
 # 2. Convert to vcf
-bcftools view $CALLS_DIR/"$SAMPLE".bcf -O z -o $CALLS_DIR/"$SAMPLE".vcf.gz
+#bcftools view $CALLS_DIR/"$SAMPLE".bcf -O z -o $CALLS_DIR/"$SAMPLE".vcf.gz
 
 
