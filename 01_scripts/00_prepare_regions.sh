@@ -1,0 +1,1 @@
+/project/lbernatchez/users/lalec31/RDC_Romaine/01_short_reads/02_SV/smoove_by_sample_20220921/01_scripts/00_prepare_regions.sh

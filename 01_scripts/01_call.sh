@@ -4,7 +4,7 @@
 # SV calling is done by sample for high-coverage genomes or in small batches for low-coverage genomes : we have high coverage (16X)
 # Following instructions for germline SV calling (https://github.com/dellytools/delly#germline-sv-calling)
 
-# IF SOME CHROMOSOMES NEED TO BE EXCLUDED : add these chrs to excl_chrs.txt (1 per line) and uncomment line 35
+# IF SOME CHROMOSOMES NEED TO BE EXCLUDED : use script 01_call_regions.sh 
 
 # parallel -a 02_infos/ind_ALL.txt -k -j 10 srun -c 1 --mem=20G -p medium --time=7-00:00 -J 01_call_{} -log/01_call_{}_%j.log /bin/sh 01_scripts/01_call.sh {} &
 
@@ -34,10 +34,8 @@ fi
 
 # 1. Run delly on each file
 delly call -g $GENOME $BAM_DIR/"$SAMPLE".bam -o $CALLS_DIR/raw/"$SAMPLE".bcf 
-## If some chromosomes need to be excluded from SV calling :
-# delly call -g $GENOME $BAM_DIR/"$SAMPLE".bam -o $CALLS_DIR/"$SAMPLE".bcf -x $REGIONS_EX
 
 # 2. Convert to vcf
-#bcftools view $CALLS_DIR/"$SAMPLE".bcf -O z -o $CALLS_DIR/"$SAMPLE".vcf.gz
+#bcftools view $CALLS_DIR/"$SAMPLE".bcf -O z -o $CALLS_DIR/raw/"$SAMPLE".vcf.gz
 
 
