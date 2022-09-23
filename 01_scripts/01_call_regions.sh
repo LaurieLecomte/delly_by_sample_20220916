@@ -6,8 +6,7 @@
 
 # IF SOME CHROMOSOMES NEED TO BE EXCLUDED : add these chrs to excl_chrs.txt (1 per line)
 
-# parallel -a 02_infos/ind_ALL.txt -k -j 10 srun -c 1 --mem=20G -p medium --time=7-00:00 -J 01_call_{} -log/01_call_{}_%j.log /bin/sh 01_scripts/01_call.sh {} &
-
+# parallel -a 02_infos/ind_ALL.txt -k -j 10 srun -c 1 --mem=20G -p medium --time=7-00:00 -J 01_call_regions_{} -log/01_call_regions_{}_%j.log /bin/sh 01_scripts/01_call_regions_M.sh {} &
 
 # VARIABLES
 GENOME="03_genome/genome.fasta"
