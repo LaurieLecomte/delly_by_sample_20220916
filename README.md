@@ -24,3 +24,5 @@ As recommended in [Delly's user manual](https://github.com/dellytools/delly#germ
 * Optional : a list of samples IDs and their population (and/or sex) for popgen analysis, such as PCA or FST calculation, in `02_infos`. 
 
 
+### Conda environment
+Create a new conda env named `delly_2022` using `conda create --name delly_2022 --file delly_env.txt` (from the main directory) and load this env prior to running the pipeline : `conda activate delly_2022`
