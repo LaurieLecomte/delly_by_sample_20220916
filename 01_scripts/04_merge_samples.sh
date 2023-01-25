@@ -30,7 +30,7 @@ fi
 ls -1 $CALLS_DIR/geno/*.bcf > $BCF_GENO_LIST
 
 # 2. Merge all genotyped samples to get a single VCF/BCF using bcftools merge
-bcftools merge -m id -O b -o $CALLS_DIR/merged_samples.bcf $BCF_GENO_LIST
+bcftools merge -m id -O b -o $CALLS_DIR/merged_samples.bcf -l $BCF_GENO_LIST
 
 # 3. Convert bcf to vcf using bcftools, add tags and sort
 bcftools view $CALLS_DIR/merged_samples.bcf | bcftools +fill-tags | bcftools sort -Oz > $MERGED_DIR/delly_merged_sorted.vcf.gz
