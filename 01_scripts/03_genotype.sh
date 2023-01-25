@@ -15,7 +15,7 @@ MERGED_DIR="06_merged"
 FILT_DIR="07_filtered"
 
 SAMPLE=$1
-BAM="$BAM_DIR/"SAMPLE".bam"
+BAM="$BAM_DIR/"$SAMPLE".bam"
 
 REGIONS_EX="02_infos/excl_chrs.txt"
 
