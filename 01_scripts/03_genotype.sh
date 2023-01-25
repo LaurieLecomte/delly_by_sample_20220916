@@ -26,4 +26,4 @@ then
 fi
 
 # 1. Genotype this merged SV site list across all samples. This can be run in parallel for each sample.
-delly call -g $GENOME -v $CALLS_DIR/merged_sites.bcf -o $CALLS_DIR/geno/"$sample_ID".geno.bcf $BAM
+delly call -g $GENOME -v $CALLS_DIR/merged_sites.bcf -o $CALLS_DIR/geno/"$SAMPLE".geno.bcf $BAM
